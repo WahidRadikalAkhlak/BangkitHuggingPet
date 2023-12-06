@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">HuggingPet</string>
+    //login
+    <string name="login_desc">Welcome To HuggingPet</string>
+    <string name="pass">Password</string>
+    <string name="deskLogin">Login</string>
+
+    <string name="email">Enter your email</string>
+    <string name="emailFormatWrong">Wrong email format</string>
+    <string name="emailTaken">The email you entered is already registered, please change your email</string>
+    <string name="failedRegist">Registration failed, please try again</string>
+
+    <string name="password">Enter your password</string>
+    <string name="passwordConfirm">Confirm your password</string>
+    <string name="passwordVisible">Show Password</string>
+    <string name="passwordLess">Password must be at least 8 characters</string>
+    <string name="passwordNotMatch">Passwords don\'t match</string>
+    <string name="passwordAccountWrong">The password you entered is incorrect</string>
+
+    <string name="tvLogin">Login</string>
+    <string name="login_button">Login</string>
+    <string name="invalidLogin">Enter your account data correctly!</string>
+    <string name="registHeader">Register Your Account</string>
+    <string name="register">Don\'t have an account yet?</string>
+    <string name="register_button">Register</string>
+    <string name="registerCreate">Create Account</string>
+    <string name="google">Login With</string>
+    <string name="name">Enter Your Name</string>
+    <string name="signingoogle">Sign In With</string>
+    <string name="passwordsame">Is Password Same</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_consultation">Consultation</string>
+    <string name="title_article">Article</string>
+    <string name="title_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
