@@ -42,4 +42,6 @@
     <string name="emailNone">Please fill your e-mail\n</string>
     <string name="passwordNone">Please fill your password</string>
     <string name="passwordConfirmNone">Please fill your password confirmation</string>
+    <string name="consult_with_veterinarian">Consult with Veterinarian</string>
+    <string name="chat_now">Chat Now</string>
 </resources>
