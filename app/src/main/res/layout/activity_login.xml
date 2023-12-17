@@ -2,12 +2,14 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/secondaryLightColor">
+
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondaryLightColor">
+    android:background="@color/secondaryLightColor"
+    android:layout_margin="20dp">
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -19,12 +21,9 @@
 
     <View
         android:id="@+id/rectangle"
-        android:layout_width="367dp"
-        android:layout_height="688dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="845dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/rectangle" />
 
     <ImageView
@@ -33,7 +32,21 @@
         android:layout_height="185dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/logohuggingpet"
+        android:text="@string/login_desc"
+        android:gravity="top"
+        android:textSize="20sp"
+        android:layout_alignParentTop="@+id/rectangle"
+        app:fontFamily="@font/poppins_bold" />
 
     <TextView
         android:id="@+id/tvLogin"
@@ -41,34 +54,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/tv_login"
-        android:layout_marginStart="40dp"
+        android:layout_centerHorizontal="true"
+        app:fontFamily="@font/poppins_bold"
         android:text="@string/deskLogin"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/logohuggingpet"
-            android:text="@string/login_desc"
-            android:gravity="top"
-            android:textSize="20dp"
-            android:fontFamily="@font/poppins_medium"
-            android:layout_alignParentTop="@+id/rectangle"
-            app:fontFamily="@font/poppins_bold"
-            />
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/layout_email"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/tv_login"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tvLogin"
         android:hint="@string/email"
         app:boxBackgroundColor="@color/white"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -144,14 +145,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/google"
-        android:fontFamily="@font/poppins_bold"
+        app:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"/>
 
     <com.google.android.gms.common.SignInButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_with"
-        android:layout_centerHorizontal="true">
-    </com.google.android.gms.common.SignInButton>
+        android:layout_below="@id/login_with"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
 </ScrollView>

@@ -5,8 +5,7 @@ import android.text.InputType
 import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
-import com.wahid.storyappintermediate.R
+import com.bangkit.huggingpet.R
 
 class NameCV : AppCompatEditText, View.OnFocusChangeListener {
 
@@ -29,7 +28,6 @@ class NameCV : AppCompatEditText, View.OnFocusChangeListener {
     }
 
     private fun init() {
-        background = ContextCompat.getDrawable(context, R.drawable.border)
 
         inputType = InputType.TYPE_CLASS_TEXT
 

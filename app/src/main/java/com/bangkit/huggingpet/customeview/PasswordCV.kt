@@ -9,12 +9,12 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
 import com.bangkit.huggingpet.R
 
 class PasswordCV : AppCompatEditText, View.OnTouchListener {
 
     var isPasswordValid: Boolean = false
+    var isPasswordVisible: Boolean = false
 
     init {
         init()
@@ -37,9 +37,9 @@ class PasswordCV : AppCompatEditText, View.OnTouchListener {
     }
 
     private fun init() {
-
-        background = ContextCompat.getDrawable(context, R.drawable.border)
         transformationMethod = PasswordTransformationMethod.getInstance()
+
+        setOnTouchListener(this)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -47,16 +47,34 @@ class PasswordCV : AppCompatEditText, View.OnTouchListener {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
                 validatePassword()
             }
 
             override fun afterTextChanged(s: Editable?) {
+
             }
         })
     }
 
     override fun onTouch(v: View?, event: MotionEvent): Boolean {
+        if (event.action == MotionEvent.ACTION_UP && event.rawX >= (right - compoundDrawables[2].bounds.width())) {
+            togglePasswordVisibility()
+            return true
+        }
         return false
+    }
+
+    private fun togglePasswordVisibility() {
+        isPasswordVisible = !isPasswordVisible
+        transformationMethod = if (isPasswordVisible) {
+            null // Show the password
+        } else {
+            PasswordTransformationMethod.getInstance() // Hide the password
+        }
+
+        // Set the cursor position to the end
+        text?.let { setSelection(it.length) }
     }
 
     override fun onFocusChanged(focused: Boolean, direction: Int, previouslyFocusedRect: Rect?) {

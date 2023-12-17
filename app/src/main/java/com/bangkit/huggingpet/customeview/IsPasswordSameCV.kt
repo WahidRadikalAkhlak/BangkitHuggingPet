@@ -1,19 +1,23 @@
 package com.bangkit.huggingpet.customeview
 
 import android.content.Context
+import android.graphics.Rect
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.core.content.ContextCompat
-import com.wahid.storyappintermediate.R
+import com.bangkit.huggingpet.R
 
-class IsPasswordSameCV : AppCompatEditText, View.OnFocusChangeListener {
+class IsPasswordSameCV : AppCompatEditText, View.OnFocusChangeListener,
+    View.OnTouchListener {
 
-    var isPasswordValid = false
+    var isPasswordSameValid = false
+    var isPasswordVisible: Boolean = false
+    var passwordCustomeView = PasswordCV(context)
+
 
     init {
         init()
@@ -35,11 +39,15 @@ class IsPasswordSameCV : AppCompatEditText, View.OnFocusChangeListener {
         init()
     }
 
+//    constructor(context: Context, passwordCustomeView: PasswordCustomeView) : super(context) {
+//        this.passwordCustomeView = passwordCustomeView
+//        init()
+//    }
+
     private fun init() {
-        background = ContextCompat.getDrawable(context, R.drawable.border)
         transformationMethod = PasswordTransformationMethod.getInstance()
 
-        onFocusChangeListener = this
+        setOnTouchListener(this)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -56,23 +64,50 @@ class IsPasswordSameCV : AppCompatEditText, View.OnFocusChangeListener {
         })
     }
 
-    override fun onFocusChange(v: View?, hasFocus: Boolean) {
-        if (!hasFocus) {
+    override fun onTouch(v: View?, event: MotionEvent): Boolean {
+        if (event.action == MotionEvent.ACTION_UP && event.rawX >= (right - compoundDrawables[2].bounds.width())) {
+            togglePasswordVisibility()
+            return true
+        }
+        return false
+    }
+
+    private fun togglePasswordVisibility() {
+        isPasswordVisible = !isPasswordVisible
+        transformationMethod = if (isPasswordVisible) {
+            null // Show the password
+        } else {
+            PasswordTransformationMethod.getInstance() // Hide the password
+        }
+
+        // Set the cursor position to the end
+        text?.let { setSelection(it.length) }
+    }
+
+    override fun onFocusChanged(focused: Boolean, direction: Int, previouslyFocusedRect: Rect?) {
+        super.onFocusChanged(focused, direction, previouslyFocusedRect)
+        if (!focused) {
             validatePassword()
         }
     }
 
     private fun validatePassword() {
         val password = text.toString().trim()
-        val confirmPassword =
-            (parent as ViewGroup).findViewById<PasswordCV>(R.id.ed_register_password).text.toString()
-                .trim()
+        val confirmPassword = text.toString().trim()
 
-        isPasswordValid = password.length >= 8 && password == confirmPassword
-        error = if (!isPasswordValid) {
+        isPasswordSameValid = password == confirmPassword && password.length >= 8
+
+
+        error = if (!isPasswordSameValid) {
             resources.getString(R.string.passwordNotMatch)
         } else {
             null
+        }
+    }
+
+    override fun onFocusChange(v: View?, hasFocus: Boolean) {
+        if (!hasFocus) {
+            validatePassword()
         }
     }
 }

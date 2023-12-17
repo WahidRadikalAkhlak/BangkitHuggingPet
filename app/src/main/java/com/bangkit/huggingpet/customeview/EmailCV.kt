@@ -34,7 +34,6 @@ class EmailCV : AppCompatEditText, View.OnFocusChangeListener {
     }
 
     private fun init() {
-        background = ContextCompat.getDrawable(context, R.drawable.border)
 
         inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
 
