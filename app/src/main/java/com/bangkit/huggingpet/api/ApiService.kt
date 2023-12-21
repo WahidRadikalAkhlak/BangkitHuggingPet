@@ -14,13 +14,6 @@ interface ApiService {
     @POST("login")
     fun loginUser(@Body requestLogin: LoginDataAccount): Call<ResponseLogin>
 
-//    @GET("stories")
-//    fun getLocationStory(
-//        @Query("size") size: Int? = null,
-//        @Query("location") location: Int? = 0,
-//        @Header("Authorization") token: String,
-//    ): Call<ResponseLocationStory>
-
     @GET("pets")
     suspend fun getPagingPet(
         @Query("page") page: Int? = null,
@@ -35,4 +28,12 @@ interface ApiService {
         @Part("description") description: RequestBody,
         @Header("Authorization") token: String
     ): Call<ResponseDetail>
+
+    interface ApiServiceUpload {
+        @Multipart
+        @POST("upload")
+        fun uploadImage(
+            @Part imagePart: MultipartBody.Part,
+        ): Call<UploadResponse>
+    }
 }

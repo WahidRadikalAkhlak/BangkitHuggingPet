@@ -38,6 +38,9 @@ class DataStoreViewModel(private val pref: Preference) : ViewModel() {
             pref.saveName(token)
         }
     }
+    fun observeLoginSession(): LiveData<Boolean> {
+        return pref.getLoginSession().asLiveData()
+    }
 
     fun clearDataLogin() {
         viewModelScope.launch {

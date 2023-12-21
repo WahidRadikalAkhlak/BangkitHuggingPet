@@ -23,5 +23,22 @@ class ApiConfig {
                 .build()
             return retrofit.create(ApiService::class.java)
         }
-    }
+
+        fun getApiServiceDetect(): ApiService.ApiServiceUpload {
+            val loggingInterceptor = if (BuildConfig.DEBUG) {
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            } else {
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+            }
+            val client = OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .build()
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BuildConfig.DETECT_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+            return retrofit.create(ApiService.ApiServiceUpload::class.java)
+            }
+      }
 }

@@ -56,15 +56,39 @@
         android:layout_below="@+id/tv_login"
         android:layout_centerHorizontal="true"
         app:fontFamily="@font/poppins_bold"
+        android:textColor="@color/secondaryColor"
         android:text="@string/deskLogin"
         android:textSize="40sp"
         android:textStyle="bold"
         />
 
 
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"-->
+<!--        android:layout_width="350dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/layout_email"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_below="@id/tvLogin"-->
+<!--        android:hint="@string/email"-->
+<!--        app:boxBackgroundColor="@color/white"-->
+<!--        app:boxCornerRadiusBottomEnd="20dp"-->
+<!--        app:boxCornerRadiusBottomStart="20dp"-->
+<!--        app:boxCornerRadiusTopEnd="20dp"-->
+<!--        app:boxCornerRadiusTopStart="20dp">-->
+<!--    <com.bangkit.huggingpet.customeview.EmailCV-->
+<!--        android:padding="12dp"-->
+<!--        android:id="@+id/input_email"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:maxLines="1"-->
+<!--        android:fontFamily="@font/poppins_medium"/>-->
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="350dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:id="@+id/layout_email"
         android:layout_centerHorizontal="true"
@@ -72,43 +96,74 @@
         android:layout_below="@id/tvLogin"
         android:hint="@string/email"
         app:boxBackgroundColor="@color/white"
+        android:textColorHint="@color/primaryDarkColor"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp">
-    <com.bangkit.huggingpet.customeview.EmailCV
-        android:padding="12dp"
-        android:id="@+id/input_email"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:maxLines="1"
-        android:fontFamily="@font/poppins_medium"/>
-</com.google.android.material.textfield.TextInputLayout>
+
+        <com.bangkit.huggingpet.customeview.EmailCV
+            android:padding="12dp"
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins_medium"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"-->
+<!--    android:layout_width="350dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:id="@+id/layout_password"-->
+<!--    android:layout_centerHorizontal="true"-->
+<!--    android:layout_marginTop="20dp"-->
+<!--    android:layout_below="@id/layout_email"-->
+<!--    android:hint="@string/password"-->
+<!--    app:boxBackgroundColor="@color/white"-->
+<!--    app:passwordToggleEnabled="true"-->
+<!--    app:boxCornerRadiusBottomEnd="20dp"-->
+<!--    app:boxCornerRadiusBottomStart="20dp"-->
+<!--    app:boxCornerRadiusTopEnd="20dp"-->
+<!--    app:boxCornerRadiusTopStart="20dp">-->
+
+<!--    <com.bangkit.huggingpet.customeview.PasswordCV-->
+<!--    android:padding="12dp"-->
+<!--    android:id="@+id/input_password"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:maxLines="1"-->
+<!--    android:fontFamily="@font/poppins_medium"/>-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
 
     <com.google.android.material.textfield.TextInputLayout
-    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-    android:layout_width="350dp"
-    android:layout_height="wrap_content"
-    android:id="@+id/layout_password"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:layout_below="@id/layout_email"
-    android:hint="@string/password"
-    app:boxBackgroundColor="@color/white"
-    app:passwordToggleEnabled="true"
-    app:boxCornerRadiusBottomEnd="20dp"
-    app:boxCornerRadiusBottomStart="20dp"
-    app:boxCornerRadiusTopEnd="20dp"
-    app:boxCornerRadiusTopStart="20dp">
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/layout_email"
+        android:hint="@string/passwordhint"
+        android:textColorHint="@color/primaryDarkColor"
+        app:boxBackgroundColor="@color/white"
+        app:passwordToggleEnabled="true"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp">
 
-    <com.bangkit.huggingpet.customeview.PasswordCV
-    android:padding="12dp"
-    android:id="@+id/input_password"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:maxLines="1"
-    android:fontFamily="@font/poppins_medium"/>
+        <com.bangkit.huggingpet.customeview.PasswordCV
+            android:padding="12dp"
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins_medium"/>
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.button.MaterialButton
     android:id="@+id/btn_login"

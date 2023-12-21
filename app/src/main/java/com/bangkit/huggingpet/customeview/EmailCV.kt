@@ -90,6 +90,6 @@ class EmailCV : AppCompatEditText, View.OnFocusChangeListener {
             message
         } else {
             null
+            }
         }
-    }
 }

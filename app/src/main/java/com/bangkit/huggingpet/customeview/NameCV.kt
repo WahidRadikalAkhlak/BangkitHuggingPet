@@ -46,6 +46,7 @@ class NameCV : AppCompatEditText, View.OnFocusChangeListener {
             resources.getString(R.string.nameNone)
         } else {
             null
+
         }
     }
 }

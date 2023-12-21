@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "606207810212",
+    "firebase_url": "https://huggingpet-ead81-default-rtdb.firebaseio.com",
     "project_id": "huggingpet-ead81",
     "storage_bucket": "huggingpet-ead81.appspot.com"
   },

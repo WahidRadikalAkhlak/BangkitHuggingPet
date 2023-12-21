@@ -67,7 +67,12 @@ class LoginActivity : AppCompatActivity() {
             val user = loginViewModel.userlogin.value
             dataStoreViewModel.saveLoginSession(true)
             dataStoreViewModel.saveToken(user?.loginResult!!.token)
-            dataStoreViewModel.saveName(user.loginResult.name)
+            dataStoreViewModel.saveName(user.loginResult.userId)
+
+            // Start ProfileActivity and pass user's name
+            val intent = Intent(this@LoginActivity, ProfileActivity::class.java)
+            intent.putExtra("userName", user.loginResult.userId)
+            startActivity(intent)
         } else {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }

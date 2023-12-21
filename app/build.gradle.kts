@@ -22,7 +22,8 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "API_URL", "\"https://story-api.dicoding.dev/v1/\"")
+            buildConfigField("String", "API_URL", "\"https://us-central1-hugging-pet.cloudfunctions.net/HuggingPet/login\"")
+            buildConfigField("String", "DETECT_URL", "\"https://upload-api-ver2-hiyfprbaoa-et.a.run.app/\"")
         }
         release {
             isMinifyEnabled = false
@@ -30,7 +31,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "API_URL", "\"https://story-api.dicoding.dev/v1/\"")
+            buildConfigField("String", "API_URL", "\"https://us-central1-hugging-pet.cloudfunctions.net/HuggingPet/login\"")
+            buildConfigField("String", "DETECT_URL", "\"https://upload-api-ver2-hiyfprbaoa-et.a.run.app/\"")
+
         }
     }
     compileOptions {
@@ -50,6 +53,7 @@ android {
 dependencies {
     implementation("androidx.test.espresso:espresso-contrib:3.5.1")
     implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
 
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")

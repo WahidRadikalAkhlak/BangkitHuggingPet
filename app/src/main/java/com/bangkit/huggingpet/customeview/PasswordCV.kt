@@ -90,6 +90,6 @@ class PasswordCV : AppCompatEditText, View.OnTouchListener {
             resources.getString(R.string.passwordLess)
         } else {
             null
+            }
         }
-    }
 }

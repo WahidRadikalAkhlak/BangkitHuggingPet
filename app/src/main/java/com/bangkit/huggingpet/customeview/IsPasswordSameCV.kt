@@ -16,7 +16,7 @@ class IsPasswordSameCV : AppCompatEditText, View.OnFocusChangeListener,
 
     var isPasswordSameValid = false
     var isPasswordVisible: Boolean = false
-    var passwordCustomeView = PasswordCV(context)
+    var PasswordCV = PasswordCV(context)
 
 
     init {
@@ -108,6 +108,6 @@ class IsPasswordSameCV : AppCompatEditText, View.OnFocusChangeListener,
     override fun onFocusChange(v: View?, hasFocus: Boolean) {
         if (!hasFocus) {
             validatePassword()
-        }
-    }
+           }
+      }
 }
