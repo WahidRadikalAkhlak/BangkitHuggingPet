@@ -20,7 +20,7 @@ class ConsultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityConsultBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.title = "Consultation"
         auth = FirebaseAuth.getInstance()
         val firebaseUser = auth.currentUser
 

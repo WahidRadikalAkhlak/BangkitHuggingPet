@@ -21,5 +21,8 @@ class ProfileActivity : AppCompatActivity() {
 
         // Set the user's name to the TextView
         detailNameTextView.text = userName
+
+        supportActionBar?.title = "Profile"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

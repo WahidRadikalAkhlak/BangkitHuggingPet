@@ -32,21 +32,4 @@ class MainViewModel (private val mainRepository: MainRepository) : ViewModel() {
         mainRepository.getResponseRegister(registDataUser)
     }
 
-    fun upload(
-        photo: MultipartBody.Part,
-        des: RequestBody,
-        token: String
-    ) {
-        mainRepository.upload(photo, des, token)
-    }
-
-    @ExperimentalPagingApi
-    fun getPagingPets(token: String): LiveData<PagingData<ListPetDetail>> {
-        return mainRepository.getPagingPets(token).cachedIn(viewModelScope)
-    }
-
-//    fun getPets(token: String) {
-//        mainRepository.getPets(token)
-//    }
 }
-

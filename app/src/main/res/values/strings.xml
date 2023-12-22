@@ -62,7 +62,7 @@
     <string name="description">Description</string>
     <string name="image">Image</string>
     <string name="result">Result :</string>
-    <string name="disease_result">Disease Result</string>
+    <string name="disease_result">Your Pet Disease Result</string>
     <string name="package_name">com.bangkit.huggingpet</string>
     <string name="choose_picture">Choose Picture</string>
     <string name="see_now">See Now</string>
@@ -76,5 +76,9 @@
     <string name="send_success">Berhasil terkirim</string>
     <string name="send_error">Gagal terkirim</string>
     <string name="nameprofile">Your Name</string>
-
+    <string name="timeout">Try Again</string>
+    <string name="upload_failed">Upload Failed</string>
+    <string name="upload_success">Upload Success</string>
+    <string name="error_upload">Error Upload</string>
+    <string name="scanpet">Scan Pet</string>
 </resources>

@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.huggingpet.R
 import com.bangkit.huggingpet.databinding.ActivityHomeBinding
@@ -30,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.title = "HuggingPet"
+        supportActionBar?.title = "Home Pet"
         ifClicked()
 
         val dataStoreViewModel =

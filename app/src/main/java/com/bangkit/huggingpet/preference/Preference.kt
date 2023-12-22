@@ -41,6 +41,7 @@ class Preference private constructor(private val dataStore: DataStore<Preference
         }
     }
 
+
     suspend fun saveName(name: String) {
         dataStore.edit { preferences ->
             preferences[NAME] = name

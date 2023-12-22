@@ -28,10 +28,9 @@
         />
     <ImageView
         android:id="@+id/ivprofile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_toEndOf="@+id/logoappbar"
-        android:layout_marginStart="310dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="350dp"
         android:src="@drawable/baseline_account_circle_24"/>
 
     <TextView

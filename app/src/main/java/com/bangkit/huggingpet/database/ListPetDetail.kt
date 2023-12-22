@@ -7,29 +7,16 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity(tableName = "Pets")
-data class ListPetDetail (
+@Entity(tableName = "pets")
+data class ListPetDetail(
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: String,
 
-    @ColumnInfo(name = "name")
-    val name: String? = null,
+    @ColumnInfo(name = "title")
+    val title: String? = null,
 
-    @ColumnInfo(name = "description")
-    val description: String? = null,
-
-    @ColumnInfo(name = "photo_url")
+    @ColumnInfo(name = "image")
     val photoUrl: String? = null,
 
-    @ColumnInfo(name = "created_at")
-    val createdAt: String? = null,
-
-    @ColumnInfo(name = "lat")
-    val lat: Double? = null,
-
-    @ColumnInfo(name = "lon")
-    val lon: Double? = null
-
-
-) : Parcelable
+    ):Parcelable

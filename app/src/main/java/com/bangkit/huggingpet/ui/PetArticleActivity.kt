@@ -27,6 +27,7 @@ class PetArticleActivity : AppCompatActivity() {
 
         binding = ActivityPetArticleBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.title = "Pet Articles"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }
